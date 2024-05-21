@@ -57,4 +57,5 @@ This repository contains code for training a prototype-based latent diffusion mo
 - embedding.py: Contains the Conditional Embedding model.
 - scheduler.py: Learning rate scheduler.
 - dataloaders.py: Data loading utilities.
+- sample.py: Main script for sampling and image generation
 
