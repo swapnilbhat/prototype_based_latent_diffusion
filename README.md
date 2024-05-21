@@ -49,7 +49,12 @@ This repository contains code for training a prototype-based latent diffusion mo
      torchrun --nproc_per_node=NUM_GPUS train.py --path_resume PATH_TO_CHECKPOINT
      ```
 
-5. File Structure
+5. Sampling
+    - To sample images from the training model:
+    ```bash
+     torchrun --nproc_per_node=NUM_GPUS sample.py --path PATH_TO_CHECKPOINT
+    ```
+6. File Structure
 - train.py: Main script for training and resuming the latent diffusion model.
 - unet.py: Contains the UNet model definition.
 - diffusion.py: Contains the Gaussian Diffusion model.
