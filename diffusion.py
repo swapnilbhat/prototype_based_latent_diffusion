@@ -7,6 +7,7 @@ from torch.distributed import get_rank
 from embedding import ConditionalEmbedding
 import torchvision
 from typing import Tuple
+import os
 
 class GaussianDiffusion(nn.Module):
     def __init__(self, dtype:torch.dtype, model, betas:np.ndarray, w:float, v:float, device:torch.device):
@@ -156,7 +157,7 @@ class GaussianDiffusion(nn.Module):
         """
         sample images from p_{theta}
         """
-        local_rank = get_rank()
+        local_rank = int(os.getenv('LOCAL_RANK', 0))
         if local_rank == 0:
             print('Start generating...')
         if model_kwargs == None:
